@@ -1,2 +1,5 @@
 # IONPasswords
-Simple tool to retrieve ION usernames and passwords
+
+This is a simple python script which retrives all usernames and passwords for ION.
+
+
