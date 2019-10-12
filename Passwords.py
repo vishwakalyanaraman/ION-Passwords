@@ -13,7 +13,6 @@ def startFun():
     driver.get("http://mypage.i-on.in/loginpage.aspx")
     if not "My Page" in driver.title:
         raise Exception("Unable to load ION page!")
-    print(driver.current_url)
 
     for i in range(5000, 60000, 1000):
         for j in range(0,300):
