@@ -22,7 +22,7 @@ def startFun():
             un = driver.find_element_by_id("txtUserName")
             un.send_keys(str(startNumber + i + j))
             a = driver.find_element_by_id("txtlogPassword")
-            a.send_keys("123456")
+            a.send_keys("abcdefg")
             submit = driver.find_element_by_id("btnSubmit")
             submit.click()
             time.sleep(2)
